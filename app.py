@@ -23,12 +23,12 @@ def home():
 	return "Homepage"
 
 # GET Profile 
-@app.route("/user", methods =["GET"])
+@app.route("/profile", methods =["GET"])
 def display_user():
 	return  jsonify(user_object)
 
 # POST Profile 
-@app.route("/register", methods = ["POST"])
+@app.route("/profile", methods = ["POST"])
 def post():
 
     # Only allows one user profile to be posted
@@ -57,7 +57,7 @@ def post():
     return jsonify(user_object)
 
 # PATCH Profile 
-@app.route("/modify", methods = ["PATCH"])
+@app.route("/profile", methods = ["PATCH"])
 def patch_user():
     
     #Get current time - Snippet from : https://www.programiz.com/python-programming/datetime/current-time
@@ -132,7 +132,7 @@ def delete_tank(id):
         if u["id"] == id:
             TANK_DB.remove(u)
             return "Success"
-            
+
     return "Tank ID not found"
 
 # API running loop
