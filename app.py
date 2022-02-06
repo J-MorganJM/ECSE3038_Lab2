@@ -119,11 +119,11 @@ def patch_tank(id):
                 u["latitude"] = request_data["latitude"]
             if 'longitude' in request_data:
                 u["longitude"] = request_data["longitude"]
-            if 'percentafe_full' in request_data:
+            if 'percentage_full' in request_data:
                 u["percentage_full"] = request_data["percentage_full"]
             return jsonify(u)
-        else:
-            return "Tank ID not found"
+    
+    return "Tank ID not found"
 
 # DELETE Tank 
 @app.route("/data/<int:id>", methods =["DELETE"])
@@ -132,8 +132,8 @@ def delete_tank(id):
         if u["id"] == id:
             TANK_DB.remove(u)
             return "Success"
-        else:
-            return "Tank ID not found"
+            
+    return "Tank ID not found"
 
 # API running loop
 if __name__ == '__main__':
