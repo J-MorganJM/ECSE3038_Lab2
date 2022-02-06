@@ -13,7 +13,7 @@ user_object = {
         "last_updated" : "default"
     }
 
-TANK_DB = []
+TANK_DB = []    # Database for Tank Objects
 Id = 0
 
 
@@ -65,7 +65,7 @@ def patch_user():
     current_time = now.strftime("%H:%M:%S")
     today = date.today()
 
-    
+
     row = {"last_updated" : f"{today}, {current_time}"}
     user_object.update(row)
 
